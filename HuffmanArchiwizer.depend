@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1521318283 source:g:\programowanie\c++\huffmanarchiwizer\main.cpp
+	<iostream>
+	"UserInterface.h"
+
+1521318297 g:\programowanie\c++\huffmanarchiwizer\userinterface.h
+	"Huffman.h"
+	<conio.h>
+	<iostream>
+
+1521319262 source:g:\programowanie\c++\huffmanarchiwizer\userinterface.cpp
+	"UserInterface.h"
+
+1521318195 source:g:\programowanie\c++\huffmanarchiwizer\huffman.cpp
+	"Huffman.h"
+
+1521318146 g:\programowanie\c++\huffmanarchiwizer\huffman.h
+	<string>
+
