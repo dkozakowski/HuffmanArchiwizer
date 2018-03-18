@@ -9,6 +9,7 @@
 #define RET_CODE 0
 #define END 48
 #define BACK 57
+//#define START 1
 
 using namespace std;
 
@@ -22,8 +23,9 @@ class UserInterface
 
     protected:
     private:
-        char compression();
+        int8_t compression();
         char decompression();
+        uint8_t errorMsg(uint8_t errorCode);
 };
 
 #endif // USERINTERFACE_H

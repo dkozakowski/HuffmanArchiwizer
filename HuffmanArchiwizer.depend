@@ -3,17 +3,20 @@
 	<iostream>
 	"UserInterface.h"
 
-1521318297 g:\programowanie\c++\huffmanarchiwizer\userinterface.h
+1521382940 g:\programowanie\c++\huffmanarchiwizer\userinterface.h
 	"Huffman.h"
 	<conio.h>
 	<iostream>
 
-1521319262 source:g:\programowanie\c++\huffmanarchiwizer\userinterface.cpp
+1521384558 source:g:\programowanie\c++\huffmanarchiwizer\userinterface.cpp
 	"UserInterface.h"
 
-1521318195 source:g:\programowanie\c++\huffmanarchiwizer\huffman.cpp
+1521383927 source:g:\programowanie\c++\huffmanarchiwizer\huffman.cpp
 	"Huffman.h"
 
-1521318146 g:\programowanie\c++\huffmanarchiwizer\huffman.h
+1521383073 g:\programowanie\c++\huffmanarchiwizer\huffman.h
 	<string>
+	<fstream>
+	<iostream>
+	<conio.h>
 

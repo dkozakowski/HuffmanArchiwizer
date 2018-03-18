@@ -9,7 +9,14 @@ Huffman::~Huffman()
 {
     //dtor
 }
-char Huffman::compress(string path, string archiveName)
-{
 
+uint8_t Huffman::compress(string path)
+{
+    fstream fileToCompress;
+
+    fileToCompress.open(path, ios::in | ios::binary);
+    if(!fileToCompress.good()) {
+        return 240;
+    }
+    return 0;
 }

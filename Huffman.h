@@ -2,6 +2,9 @@
 #define HUFFMAN_H
 
 #include <string>
+#include <fstream>
+#include <iostream>
+#include <conio.h>
 
 using namespace std;
 
@@ -12,7 +15,7 @@ class Huffman
         Huffman();
         virtual ~Huffman();
 
-        char compress(string path, string archiveName);
+        uint8_t compress(string path);
         char decompress(string path);
 
     protected:
