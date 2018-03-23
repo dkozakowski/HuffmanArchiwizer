@@ -40,14 +40,14 @@ char UserInterface::start()
 
     } while(choice != END);
     system("CLS");
-    return RET_CODE;
+    return 0;
 }
 
-int8_t UserInterface::compression()
+uint8_t UserInterface::compression()
 {
     uint8_t retCode;
+    uint8_t error;
     string filePath;
-    //string archiveName;
     Huffman huffman;
     do {
         system("CLS");
@@ -55,28 +55,21 @@ int8_t UserInterface::compression()
         cout << "KOMPRESJA" << endl << endl;
         cout << "Podaj plik do kompresji: ";
         cin >> filePath;
-
-        uint8_t error = 0;
         error = huffman.compress(filePath);
-        //cout << "Kod zamkniecia funkcji compreess: " << +error << endl;
-        //getch();
         if(error != 0) retCode = errorMsg(error);
         else {
             cout << "SKOMPRESOWANO" << endl;
             getch();
             retCode = BACK;
         }
-
     }while(retCode != END && retCode != BACK);
-
     return retCode;
 }
 
-char UserInterface::decompression()
+uint8_t UserInterface::decompression()
 {
-    char retCode;
+    uint8_t retCode;
     string archivePath;
-    //string archiveName;
     Huffman huffman;
     do {
         system("CLS");
@@ -84,54 +77,51 @@ char UserInterface::decompression()
         cout << "DEKOMPRESJA" << endl << endl;
         cout << "Podaj plik archiwum: ";
         cin >> archivePath;
-
         uint8_t error = 0;
-        error = huffman.decompress();
-
-        cout << "ZDEKOMPRESOWANO" << endl;
-        retCode = getch();
+        error = huffman.decompress(archivePath);
+        if(error != 0) retCode = errorMsg(error);
+        else {
+            cout << "ZDEKOMPRESOWANO" << endl;
+            getch();
+            retCode = BACK;
+        }
     }while(retCode != END && retCode != BACK);
-
     return retCode;
 }
 
 uint8_t UserInterface::errorMsg(uint8_t errorCode)
 {
-    //char retCode;
-    int8_t temp;
+    int8_t retCode;
     system("CLS");
-    //cout << "Przechwycony nr bledu: " << errorCode << endl;
     switch (errorCode) {
+        cout << "Error Code: " << +errorCode << endl;
         case 240: {
-            cout << "Error Code: " << +errorCode << endl;
             cout << "Plik nie istnieje lub nie masz praw do jego odczytu" << endl << endl;
             cout << "\t1.\tPonow probe" << endl;
             cout << "\t0.\tKONIEC" << endl;
             do {
-                temp = getch();
-            } while(temp != '1' && temp != '0');
+                retCode = getch();
+            } while(retCode != '1' && retCode != '0');
             break;
         }
         case 241: {
-            cout << "Error Code: " << +errorCode << endl;
             cout << "Archiwum nie istnieje lub nie masz do niego dostepu" << endl << endl;
             cout << "\t1.\tPonow probe" << endl;
             cout << "\t0.\tKONIEC" << endl;
             do {
-                temp = getch();
-            } while(temp != '1' && temp != '0');
+                retCode = getch();
+            } while(retCode != '1' && retCode != '0');
             break;
         }
         default: {
-            cout << "Error Code: " << +errorCode << endl;
             cout << "Nieznany blad!!! Nie wiem co zrobiles/as zdecyduj co robic." << endl << endl;
             cout << "\t1.\tPonow probe" << endl;
             cout << "\t0.\tKONIEC" << endl;
             do {
-                temp = getch();
-            } while(temp != '1' && temp != '0');
+                retCode = getch();
+            } while(retCode != '1' && retCode != '0');
             break;
         }
     }
-    return temp;
+    return retCode;
 }

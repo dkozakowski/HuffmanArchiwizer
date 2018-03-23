@@ -34,3 +34,5 @@
 # CodeBlocks Procjet files
 *.save
 
+# My test files
+*.txt
