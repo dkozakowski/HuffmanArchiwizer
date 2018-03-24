@@ -63,6 +63,7 @@ uint8_t UserInterface::compression()
             retCode = BACK;
         }
     }while(retCode != END && retCode != BACK);
+
     return retCode;
 }
 

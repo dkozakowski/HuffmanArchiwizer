@@ -47,5 +47,6 @@ void Huffman::debug_printOfOccurences(map<uint8_t,unsigned int>& counterOfOccure
     for(it = counterOfOccurences.begin();it!=counterOfOccurences.end();++it) {
         cout << +it->first << ": " << it->first << ": " << it->second << endl;
     }
-
+    cout << "Pause" ;
+    getch();
 }
