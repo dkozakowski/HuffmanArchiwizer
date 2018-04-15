@@ -1,24 +1,32 @@
 # depslib dependency file v1.0
-1521902171 source:g:\programowanie\c++\huffmanarchiwizer\main.cpp
+1523459320 source:g:\programowanie\c++\huffmanarchiwizer\main.cpp
 	<iostream>
 	<cstring>
 	"UserInterface.h"
 
-1521390348 g:\programowanie\c++\huffmanarchiwizer\userinterface.h
+1521393948 g:\programowanie\c++\huffmanarchiwizer\userinterface.h
 	"Huffman.h"
 	<conio.h>
 	<iostream>
 
-1521901495 source:g:\programowanie\c++\huffmanarchiwizer\userinterface.cpp
+1521912256 source:g:\programowanie\c++\huffmanarchiwizer\userinterface.cpp
 	"UserInterface.h"
 
-1521901737 source:g:\programowanie\c++\huffmanarchiwizer\huffman.cpp
+1523053622 source:g:\programowanie\c++\huffmanarchiwizer\huffman.cpp
 	"Huffman.h"
 
-1521722806 g:\programowanie\c++\huffmanarchiwizer\huffman.h
+1523030329 g:\programowanie\c++\huffmanarchiwizer\huffman.h
+	<BitFileStream.h>
 	<string>
 	<fstream>
 	<iostream>
 	<conio.h>
 	<map>
+
+1523459221 source:g:\programowanie\c++\huffmanarchiwizer\bitfilestream.cpp
+	"BitFileStream.h"
+
+1523439622 g:\programowanie\c++\huffmanarchiwizer\bitfilestream.h
+	<fstream>
+	<iostream>
 

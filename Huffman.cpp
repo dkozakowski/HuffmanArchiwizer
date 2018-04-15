@@ -26,6 +26,20 @@ uint8_t Huffman::compress(string path)
 
 uint8_t Huffman::decompress(string patch)
 {
+    BitFileStream archive;
+    string abc;
+    archive << abc;
+    std::cout << "Odczytalem: " << abc << std::endl;
+    archive << abc;
+    std::cout << "Odczytalem: " << abc << std::endl;
+    archive << abc;
+    std::cout << "Odczytalem: " << abc << std::endl;
+    archive << abc;
+    std::cout << "Odczytalem: " << abc << std::endl;
+    archive << abc;
+    std::cout << "Odczytalem: " << abc << std::endl;
+    getch();
+
 
     return 241;
 }

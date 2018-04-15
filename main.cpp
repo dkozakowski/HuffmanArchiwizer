@@ -6,6 +6,45 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
+
+    BitFileStream plik;
+
+    plik.open("test.txt", fstream::out);
+    plik.saveBit(true);
+    plik.saveBit(true);
+    plik.saveBit(true);
+    plik.saveBit(false); //7
+
+    plik.saveBit(false);
+    plik.saveBit(true);
+    plik.saveBit(false); // 10100111 a7
+    plik.saveBit(true);  //a
+    cout << "Pierwszy bajt" << endl;
+
+    plik.saveBit(false);
+    plik.saveBit(true);
+    plik.saveBit(false);
+    plik.saveBit(true); //a
+
+    plik.saveBit(false);
+    plik.saveBit(false);
+    plik.saveBit(false);
+    plik.saveBit(false);//0
+    cout << "Drugi bajt" << endl;
+
+    plik.saveBit(true);
+    plik.saveBit(true);
+    plik.saveBit(false);
+    plik.saveBit(true);//b
+
+    plik.saveBit(false);
+    plik.saveBit(true);
+    plik.saveBit(false);
+    plik.saveBit(false);//2
+    plik.close();
+
+
+/*
     switch (argc) {
         case 1: {
             UserInterface interface;
@@ -31,6 +70,9 @@ int main(int argc, char *argv[]) {
 
         }
     }
-    getch();
+    //getch();
+
+    */
+
     return 0;
 }

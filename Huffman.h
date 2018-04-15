@@ -1,6 +1,8 @@
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
 
+#include <BitFileStream.h>
+
 #include <string>
 #include <fstream>
 #include <iostream>
