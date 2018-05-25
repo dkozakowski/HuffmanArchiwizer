@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <fstream>
 
 #include "UserInterface.h"
 
@@ -8,43 +9,93 @@ using namespace std;
 int main(int argc, char *argv[]) {
 
     BitFileStream plik;
+    /*cout << "Uruchamiam" << endl;
+    plik.open("Dorota.txt", fstream::in);
+    while(!plik.eof()){
+        if(plik.readBit()) cout << '1';
+            else cout << '0';
 
-    plik.open("test.txt", fstream::out);
-    plik.saveBit(true);
-    plik.saveBit(true);
-    plik.saveBit(true);
-    plik.saveBit(false); //7
+    }*/
 
+    /*plik.open("test.txt", fstream::out);
+    plik.saveBit(false);
+    plik.saveBit(false);
     plik.saveBit(false);
     plik.saveBit(true);
-    plik.saveBit(false); // 10100111 a7
-    plik.saveBit(true);  //a
-    cout << "Pierwszy bajt" << endl;
-
-    plik.saveBit(false);
-    plik.saveBit(true);
-    plik.saveBit(false);
-    plik.saveBit(true); //a
 
     plik.saveBit(false);
     plik.saveBit(false);
+    plik.saveBit(true);
     plik.saveBit(false);
-    plik.saveBit(false);//0
-    cout << "Drugi bajt" << endl;
+    //cout << "Pierwszy bajt za nami" << endl;
 
-    plik.saveBit(true);
-    plik.saveBit(true);
     plik.saveBit(false);
-    plik.saveBit(true);//b
+    plik.saveBit(false);
+    plik.saveBit(true);
+    plik.saveBit(true);
 
     plik.saveBit(false);
     plik.saveBit(true);
     plik.saveBit(false);
-    plik.saveBit(false);//2
+    plik.saveBit(false);
+    //cout << "Drugi bajtv za nami" << endl;
+
+    plik.saveBit(false);
+    plik.saveBit(true);
+    plik.saveBit(false);
+    plik.saveBit(true);
+
+    plik.saveBit(false);
+    plik.saveBit(true);
+    plik.saveBit(true);
+    plik.saveBit(false);
+    //cout << "Trzeci bajt za nami" << endl;
+
+    plik.saveBit(false);
+    plik.saveBit(true);
+    plik.saveBit(true);
+    plik.saveBit(true);
+
+    plik.saveBit(true);
+    plik.saveBit(false);
+    plik.saveBit(false);
+    plik.saveBit(false);
+    //cout << "Czwarty bajt za nami" << endl;
+
+    plik.saveBit(true);
+    plik.saveBit(false);
+    plik.saveBit(false);
+    plik.saveBit(true);
+
+    plik.saveBit(true);
+    plik.saveBit(false);
+    plik.saveBit(true);
+    plik.saveBit(false);
+    //cout << "Pi¹ty bajt za nami" << endl;
+
+    plik.saveBit(true);
+    plik.saveBit(false);
+    plik.saveBit(true);
+    plik.saveBit(true);
+
+    plik.saveBit(true);
+    plik.saveBit(true);
+    plik.saveBit(false);
+    plik.saveBit(false);
+    //cout << "Szusty bajt za nami" << endl;
+
+    //plik.saveBit(true);
+    //plik.saveBit(true);
+    //plik.saveBit(false);
+    //plik.saveBit(true);
+
+    //plik.saveBit(false);
+    //plik.saveBit(true);
+
     plik.close();
+*/
 
-
-/*
+///*
     switch (argc) {
         case 1: {
             UserInterface interface;
@@ -72,7 +123,7 @@ int main(int argc, char *argv[]) {
     }
     //getch();
 
-    */
+    //*/
 
     return 0;
 }
