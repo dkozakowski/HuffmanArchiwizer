@@ -11,6 +11,7 @@ class HuffNode
         HuffNode(char, unsigned int, HuffNode*,  HuffNode*);
         char symbol;
         unsigned int frequency;
+        bool child;
         HuffNode* left0;
         HuffNode* right1;
 };

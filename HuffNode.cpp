@@ -4,6 +4,7 @@ HuffNode::HuffNode()
 {
     //this->symbol = nullptr;
     this->frequency = 0;
+    this->child = true;
     this->left0 = nullptr;
     this->right1 = nullptr;
 }
@@ -20,6 +21,7 @@ HuffNode::HuffNode(char symbol, unsigned int frequency) {
     this->frequency = frequency;
     this->left0 = nullptr;
     this->right1 = nullptr;
+    this->child = false;
 }
 
 HuffNode::HuffNode(char symbol, unsigned int frequency, HuffNode* left0, HuffNode* right1) {
@@ -27,6 +29,7 @@ HuffNode::HuffNode(char symbol, unsigned int frequency, HuffNode* left0, HuffNod
     this->frequency = frequency;
     this->left0 = left0;
     this->right1 = right1;
+    this->child = true;
 }
 
 

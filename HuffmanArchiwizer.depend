@@ -1,22 +1,24 @@
 # depslib dependency file v1.0
-1526837971 source:g:\programowanie\c++\huffmanarchiwizer\main.cpp
+1529913462 source:g:\programowanie\c++\huffmanarchiwizer\main.cpp
 	<iostream>
 	<cstring>
 	<fstream>
 	"UserInterface.h"
+	"Huffman2.h"
 
-1521393948 g:\programowanie\c++\huffmanarchiwizer\userinterface.h
+1529646036 g:\programowanie\c++\huffmanarchiwizer\userinterface.h
 	"Huffman.h"
+	"Huffman2.h"
 	<conio.h>
 	<iostream>
 
-1521912256 source:g:\programowanie\c++\huffmanarchiwizer\userinterface.cpp
+1529912657 source:g:\programowanie\c++\huffmanarchiwizer\userinterface.cpp
 	"UserInterface.h"
 
-1526997461 source:g:\programowanie\c++\huffmanarchiwizer\huffman.cpp
+1529863904 source:g:\programowanie\c++\huffmanarchiwizer\huffman.cpp
 	"Huffman.h"
 
-1526996497 g:\programowanie\c++\huffmanarchiwizer\huffman.h
+1529646071 g:\programowanie\c++\huffmanarchiwizer\huffman.h
 	<BitFileStream.h>
 	<HuffNode.h>
 	<string>
@@ -26,15 +28,31 @@
 	<map>
 	<vector>
 
-1526837703 source:g:\programowanie\c++\huffmanarchiwizer\bitfilestream.cpp
+1530042522 source:g:\programowanie\c++\huffmanarchiwizer\bitfilestream.cpp
 	"BitFileStream.h"
 
-1526837696 g:\programowanie\c++\huffmanarchiwizer\bitfilestream.h
+1530038273 g:\programowanie\c++\huffmanarchiwizer\bitfilestream.h
 	<fstream>
 	<iostream>
+	<math.h>
 
-1526846478 g:\programowanie\c++\huffmanarchiwizer\huffnode.h
+1527239908 g:\programowanie\c++\huffmanarchiwizer\huffnode.h
 
-1526996744 source:g:\programowanie\c++\huffmanarchiwizer\huffnode.cpp
+1527239934 source:g:\programowanie\c++\huffmanarchiwizer\huffnode.cpp
 	"HuffNode.h"
+
+1530042482 source:g:\programowanie\c++\huffmanarchiwizer\huffman2.cpp
+	"Huffman2.h"
+
+1529993164 g:\programowanie\c++\huffmanarchiwizer\huffman2.h
+	<BitFileStream.h>
+	<HuffNode.h>
+	<string>
+	<fstream>
+	<iostream>
+	<conio.h>
+	<map>
+	<vector>
+	<String>
+	<bitset>
 

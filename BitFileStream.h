@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -15,6 +16,11 @@ class BitFileStream : public fstream
         void saveBit(bool);
         void saveBit(string);
         bool readBit();
+        char readAsynchronizedByteToChar();
+        string readAsynchronizedByteToString();
+        uint8_t stringToChar(string);
+        void forceSave();
+        void forceFlush();
         void debug_showByte(uint8_t);
 
     protected:

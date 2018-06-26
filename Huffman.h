@@ -33,15 +33,17 @@ class Huffman
         };
 
 
-        uint8_t countWords(fstream&, map<uint8_t,unsigned int>&);
+        void countWords(fstream&, map<uint8_t,unsigned int>&);
         void rewriteToListCounterOfOccurences(map<uint8_t,unsigned int>&, vector<HuffNode*>&);
-        HuffNode* generateHuffTree(vector<HuffNode*>&);
+        void generateHuffTree(vector<HuffNode*>&, HuffNode*);
+
         HuffNode* findMinHuffNode(vector<HuffNode*>&);
-        huffCode* generateHuffCodeTab(HuffNode, int);
-        huffCode* recursionHuffItem(HuffNode);
+        void generateHuffCodeTab(HuffNode*, int, huffCode*);
+        void recursionHuffItem(HuffNode*, huffCode*);
 
         void debug_printHuffCodeTab(huffCode*, int);
         void debug_printOfOccurences(map<uint8_t,unsigned int>&);
+        void debug_printNodeList();
 };
 
 #endif // HUFFMAN_H

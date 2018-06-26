@@ -48,7 +48,7 @@ uint8_t UserInterface::compression()
     uint8_t retCode;
     uint8_t error;
     string filePath;
-    Huffman huffman;
+    Huffman2 huffman;
     do {
         system("CLS");
         cout << "Program Archiwizujacy algorytmem Huffnama - Damian Kozakowski" << endl << endl;
@@ -71,7 +71,7 @@ uint8_t UserInterface::decompression()
 {
     uint8_t retCode;
     string archivePath;
-    Huffman huffman;
+    Huffman2 huffman;
     do {
         system("CLS");
         cout << "Program Archiwizujacy algorytmem Huffnama - Damian Kozakowski" << endl << endl;
@@ -112,6 +112,16 @@ uint8_t UserInterface::errorMsg(uint8_t errorCode)
             do {
                 retCode = getch();
             } while(retCode != '1' && retCode != '0');
+            break;
+        }
+        case 242: {
+            cout << "Plik nie jest archiwum DKH lub archiwum jest uszkodzone" << endl << endl;
+            cout << "\t1.\tPonow probe" << endl;
+            cout << "\t2.\tRozpakuj silowo mimo bledu" << endl << "\t\t(opcja tylko jesli wiesz co robisz) \\ Work in progress" << endl;
+            cout << "\t0.\tKONIEC" << endl;
+            do {
+                retCode = getch();
+            } while(retCode != '1' && retCode != '0' && retCode != '2');
             break;
         }
         default: {

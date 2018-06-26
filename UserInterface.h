@@ -2,6 +2,7 @@
 #define USERINTERFACE_H
 
 #include "Huffman.h"
+#include "Huffman2.h"
 
 #include <conio.h>
 #include <iostream>
