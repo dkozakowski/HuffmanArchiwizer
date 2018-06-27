@@ -9,13 +9,10 @@ uint8_t Huffman2::compress(string path)
     }
     countWord(fileToCompress, counterOfOccurences);
     rewriteToListCounterOfOccurences(counterOfOccurences, nodeList);
-    //debug_printNodeList(nodeList, counterOfOccurences.size());
     generateHuffTree(nodeList);
     treeRoot = nodeList[0];
     generateHuffCodeTab(*treeRoot, counterOfOccurences.size(), codeList);
-    //debug_printHuffCodeTab(codeList,counterOfOccurences.size());
     sortHuffCodeTab(codeList);
-    //cout << "Posortowane" << endl;
     debug_printHuffCodeTab(codeList,counterOfOccurences.size());
 
     fileToCompress.close();
@@ -28,16 +25,11 @@ uint8_t Huffman2::compress(string path)
 
     char magicByte = 0;
     magicByte=(((((magicByte+1)<<2)+1)<<4)+3)<<1;
-    //cout << "Hahahaha: " << +magicByte << endl;
     fileCompress << magicByte;
-
     writeDictionaryToFile(codeList,  fileCompress);
-
-    //fileToCompress.seekg(0);
     codeFile(codeList, fileToCompress, fileCompress);
     fileCompress.close();
     fileToCompress.close();
-
 
     return 0;
 }
@@ -189,7 +181,7 @@ void Huffman2::sortHuffCodeTab(vector<huffCode>& codeList) {
     codeList = sortedCodeList;
 }
 
-void Huffman2::writeDictionaryToFile2(vector<huffCode> codeList, BitFileStream& fileCompress) {
+/*void Huffman2::writeDictionaryToFile2(vector<huffCode> codeList, BitFileStream& fileCompress) {
     //cout << "Ilosc kodowanych znakow: " << codeList.size() << endl;
     unsigned char lengthOfCurrentCode;
     bitset<8> temp;
@@ -225,7 +217,7 @@ void Huffman2::writeDictionaryToFile2(vector<huffCode> codeList, BitFileStream& 
         currentCodes = "";
     }
     fileCompress.forceSave();
-}
+}*/
 
 void Huffman2::writeDictionaryToFile(vector<huffCode> codeList, BitFileStream& fileCompress) {
     bitset<8> temp;
@@ -313,6 +305,7 @@ void Huffman2::debug_printHuffCodeTab(vector<huffCode> huffCodeTab, unsigned int
 uint8_t Huffman2::decompress(string path)
 {
     BitFileStream archive;
+    BitFileStream resultFile;
     char temp[1];
     //char magicByte = 0;
     unsigned char globalAmountOfChar = 0;
@@ -327,6 +320,7 @@ uint8_t Huffman2::decompress(string path)
     char symbol;
     bool bit = false;
     string magicbyte = "10100110";
+    //string
 
     archive.open(path, ios::in | ios::binary);
     if(!archive.good()) {
@@ -335,23 +329,23 @@ uint8_t Huffman2::decompress(string path)
     cout << "Otworzono poprawnie" << endl;
 
     temporary = archive.readAsynchronizedByteToString();
-    //getch();
+    getch();
     if(temporary != magicbyte) {
         archive.close();
         return 242;
     }
     temporary = archive.readAsynchronizedByteToString();
     globalAmountOfChar = archive.stringToChar(temporary);
-    cout << "GlobalAmountOfChar: " << temporary << " => " << +globalAmountOfChar << endl;
+    //cout << "GlobalAmountOfChar: " << temporary << " => " << +globalAmountOfChar << endl;
     while(countedAmountOfChar < globalAmountOfChar) {
-        cout << +countedAmountOfChar << " x:x " << +globalAmountOfChar << endl;
+        //cout << +countedAmountOfChar << " x:x " << +globalAmountOfChar << endl;
         currentCodeSize = temp[0];
         currentCodeSize = archive.stringToChar(archive.readAsynchronizedByteToString());
 
-        cout << "currentCodeSize: " << +currentCodeSize << endl; //temp1.to_string() << endl;
+        //cout << "currentCodeSize: " << +currentCodeSize << endl; //temp1.to_string() << endl;
         //getch();
         currentCodeAmount = archive.stringToChar(archive.readAsynchronizedByteToString());
-        cout << "currentCodeAmount: " << +currentCodeAmount << endl;// temp1.to_string() << endl;
+        //cout << "currentCodeAmount: " << +currentCodeAmount << endl;// temp1.to_string() << endl;
 
         for(int i = currentCodeAmount; i > 0; i--) {
                 //cout << "Wejscie do petli danego rodzaju " << +currentCodeAmount << endl;
@@ -370,8 +364,30 @@ uint8_t Huffman2::decompress(string path)
         }
         countedAmountOfChar+=currentCodeAmount;
     }
-    getch();
+    //getch();
     debug_printHuffCodeTab(codeList,codeList.size());
+
+    resultFile.open("outputFile",ios::out | ios::binary);
+    //dekompresowanie
+    temporary = "";
+    while(!archive.eof()) {
+            //cout << "Obrot" << endl;
+        bit = archive.readBit();
+        if(bit) temporary += '1';
+        else temporary +='0';
+        //cout << "Temporary: " << temporary << endl;
+        for(int i = 0; i < codeList.size(); i++) {
+            //cout << "i: " << i << endl;
+            if(codeList.at(i).code == temporary) {
+                //cout << "Symbol: " << codeList.at(i).symbol;
+                resultFile << codeList.at(i).symbol;
+                temporary = "";
+                break;
+            }
+        }
+
+    }
+
 
     archive.close();
     return 0;

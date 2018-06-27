@@ -18,10 +18,8 @@ class UserInterface
     public:
         UserInterface();
         virtual ~UserInterface();
-
         char start();
 
-    protected:
     private:
         uint8_t compression();
         uint8_t decompression();

@@ -18,13 +18,13 @@ BitFileStream::~BitFileStream()
 
 void BitFileStream::forceSave() {
     if(countBit > 0) {
-        cout << "Force save!!! " << 8-countBit << "bits. " << endl;
+        //cout << "Force save!!! " << 8-countBit << "bits. " << endl;
         fstream::put(byte);
     }
 }
 
 void BitFileStream::forceFlush() {
-    cout << "Force flush!!!" << countBit << "bits flushed." << endl;
+    //cout << "Force flush!!!" << countBit << "bits flushed." << endl;
     countBit = 0;
 }
 

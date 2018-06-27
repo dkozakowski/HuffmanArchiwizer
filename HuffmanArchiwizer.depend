@@ -6,7 +6,7 @@
 	"UserInterface.h"
 	"Huffman2.h"
 
-1529646036 g:\programowanie\c++\huffmanarchiwizer\userinterface.h
+1530074585 g:\programowanie\c++\huffmanarchiwizer\userinterface.h
 	"Huffman.h"
 	"Huffman2.h"
 	<conio.h>
@@ -28,7 +28,7 @@
 	<map>
 	<vector>
 
-1530042522 source:g:\programowanie\c++\huffmanarchiwizer\bitfilestream.cpp
+1530070799 source:g:\programowanie\c++\huffmanarchiwizer\bitfilestream.cpp
 	"BitFileStream.h"
 
 1530038273 g:\programowanie\c++\huffmanarchiwizer\bitfilestream.h
@@ -41,7 +41,7 @@
 1527239934 source:g:\programowanie\c++\huffmanarchiwizer\huffnode.cpp
 	"HuffNode.h"
 
-1530042482 source:g:\programowanie\c++\huffmanarchiwizer\huffman2.cpp
+1530071241 source:g:\programowanie\c++\huffmanarchiwizer\huffman2.cpp
 	"Huffman2.h"
 
 1529993164 g:\programowanie\c++\huffmanarchiwizer\huffman2.h
